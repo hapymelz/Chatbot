@@ -21,6 +21,15 @@ public class Chatbot
 	}
 	
 	
+	public String processText(String text)
+	{
+		String response = "You said: ";
+		
+		response += text + "\n";
+		
+		return response;
+	}
+	
 	
 	@Override
 	public String toString()
