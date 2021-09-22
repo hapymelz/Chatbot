@@ -5,9 +5,9 @@ public class Chatbot
 	private String name;
 	
 	
-	public Chatbot()
+	public Chatbot(String name)
 	{
-		this.name = "Chatbot";
+		this.name = name;
 	}
 	
 	public String getName()
@@ -21,6 +21,16 @@ public class Chatbot
 	}
 	
 	
+	
+	@Override
+	public String toString()
+	{
+		String description = "Hello, I am "  + name + " and I am here to chat with you";
+		description += ".\n";
+		description += "My favorite topic is: coming soon";
+		
+		return description;
+	}
 	
 }
 	
