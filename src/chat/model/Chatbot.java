@@ -1,5 +1,9 @@
 package chat.model;
 
+import java.time.LocalDateTime;
+
+
+
 public class Chatbot
 {
 	private String name;
@@ -27,6 +31,8 @@ public class Chatbot
 		
 		response += text + "\n";
 		
+		response += getDate();
+		
 		return response;
 	}
 	
@@ -39,6 +45,26 @@ public class Chatbot
 		description += "My favorite topic is: coming soon";
 		
 		return description;
+	}
+	
+	public String getDate()
+	{
+		String date = "The date is ";
+		
+		LocalDateTime currentDate = LocalDateTime.now();
+		
+		String day = currentDate.getDayOfWeek().toString();
+		
+		date += day + ", ";
+		
+		return date;
+	}
+	
+	public String getTime()
+	{
+		String time = "";
+		
+		return time;
 	}
 	
 }

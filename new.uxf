@@ -26,7 +26,7 @@
       <w>240</w>
       <h>130</h>
     </coordinates>
-    <panel_attributes>chat :: model
+    <panel_attributes>chat.model :: Chatbot
 --
 - name : String
 
