@@ -31,7 +31,9 @@ public class Chatbot
 		
 		response += text + "\n";
 		
-		response += getDate();
+		response += getDate() + "\n";
+		
+		response += getTime();
 		
 		return response;
 	}
@@ -57,12 +59,27 @@ public class Chatbot
 		
 		date += day + ", ";
 		
+		day = "the " + currentDate.getDayOfMonth() + " ";
+		
+		date += day + "of ";
+		
+		String month = currentDate.getMonth().toString();
+		
+		date += month + ", " + currentDate.getYear();
+		
 		return date;
 	}
 	
 	public String getTime()
 	{
-		String time = "";
+		String time = "The time is ";
+		
+		LocalDateTime currentTime = LocalDateTime.now();
+		
+		time += currentTime.getHour() + ":";	
+		time += currentTime.getMinute();
+		
+		
 		
 		return time;
 	}
