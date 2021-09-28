@@ -21,22 +21,29 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>510</y>
+      <x>370</x>
+      <y>250</y>
       <w>240</w>
-      <h>130</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>chat.model :: Chatbot
 --
 - name : String
 
 --
-+ get()/set()
++ get()/set(...)
 + Chatbot(String) : constructor
 + toString() : String
 
 + processText(String) : String
-</panel_attributes>
+
++ getDate() : String
++ getTime() : String
++ sayGreeting() : String
++ sayFarewell() : String
++ randomTopic() : String
++ isPolite() : boolean
++ isPolitical : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

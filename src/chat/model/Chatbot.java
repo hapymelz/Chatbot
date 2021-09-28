@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 public class Chatbot
 {
 	private String name;
+	private ArrayList<Chatbot> greetings;
 	
 	
 	public Chatbot(String name)
@@ -82,6 +83,15 @@ public class Chatbot
 		
 		
 		return time;
+	}
+	
+	
+	public String sayGreeting()
+	{
+		
+		
+		
+		
 	}
 	
 }
