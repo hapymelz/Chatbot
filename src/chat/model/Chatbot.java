@@ -1,18 +1,21 @@
 package chat.model;
 
 import java.time.LocalDateTime;
-
+import java.util.ArrayList;
 
 
 public class Chatbot
 {
 	private String name;
-	private ArrayList<Chatbot> greetings;
+	private int greetingCount;
+	private int farewellCount; 
 	
 	
 	public Chatbot(String name)
 	{
 		this.name = name;
+		this.greetingCount = 0;
+		this.farewellCount = 4;
 	}
 	
 	public String getName()
@@ -28,15 +31,78 @@ public class Chatbot
 	
 	public String processText(String text)
 	{
-		String response = "You said: ";
+		String response = sayGreeting() + "\nYou said: ";
 		
 		response += text + "\n";
 		
-		response += getDate() + "\n";
+		if (text.toLowerCase().indexOf("date") >= 0)
+		{
+			response += getDate() + "\n";
+		}
 		
-		response += getTime();
+		if (text.toUpperCase().indexOf("TIME") >= 0)
+		{
+			response += getTime() + "\n";
+		}
+		
+		if (isPolitical(text))
+		{
+			response += "I'm not about politics.\n";
+			response += sayFarewell() + "\n";
+		}
+		
+		if (isPolite(text))
+		{
+			response += "Oh, you are SO polite!";
+		}
 		
 		return response;
+	}
+	
+	public String sayGreeting()
+	{
+		String greeting = " ";
+		
+		ArrayList<String> greetings = new ArrayList<String>();
+		
+		greetings.add("Hallo!");
+		greetings.add("Howdy!");
+		greetings.add("Good day to you, sir.");
+		greetings.add("Hi friend!");
+		greetings.add("Hey, you!");
+		
+		greeting = greetings.get(greetingCount);
+		greetingCount++;
+		
+		if (greetingCount == greetings.size())
+		{
+			greetingCount = 0;
+		}
+		
+		return greeting;
+	}
+	
+	public String sayFarewell()
+	{
+		String farewell = " ";
+		
+		ArrayList<String> farewells = new ArrayList<String>();
+		
+		farewells.add("Bye Bye!");
+		farewells.add("See ya!");
+		farewells.add("Au Revoir!");
+		farewells.add("Good Bye!");
+		farewells.add("Have a nice day!");
+		
+		farewell = farewells.get(farewellCount);
+		farewellCount--;
+		
+		if (farewellCount == 0)
+		{
+			farewellCount = 4;
+		}
+		
+		return farewell;
 	}
 	
 	
@@ -85,13 +151,47 @@ public class Chatbot
 		return time;
 	}
 	
-	
-	public String sayGreeting()
+	public Boolean isPolitical(String parameter)
 	{
+		boolean political = false;
 		
+		ArrayList<String> politicList = new ArrayList<String>();
 		
+		politicList.add("politics");
+		politicList.add("republican");
+		politicList.add("democrat");
+		politicList.add("election");
+		politicList.add("biden");
 		
+		for (int index = 0; index < 5; index++)
+		{
+			if (parameter.toLowerCase().indexOf(politicList.get(index)) >= 0)
+			{
+				political = true;
+			}
+		}
 		
+		return political;
+	}
+	
+	public Boolean isPolite(String parameter)
+	{
+		boolean polite = false;
+		
+		ArrayList<String> politeness = new ArrayList<String>();
+		
+		politeness.add("please");
+		politeness.add("thank you");
+		
+		for (String current : politeness)
+		{
+			if (parameter.toLowerCase().indexOf(current) >= 0)
+			{
+				polite = true;
+			}
+		}
+		
+		return polite;
 	}
 	
 }
