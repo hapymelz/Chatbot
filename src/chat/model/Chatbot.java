@@ -56,6 +56,8 @@ public class Chatbot
 			response += "Oh, you are SO polite!";
 		}
 		
+		response += getRandomTopic();
+		
 		return response;
 	}
 	
@@ -192,6 +194,31 @@ public class Chatbot
 		}
 		
 		return polite;
+	}
+	
+	public String getRandomTopic()
+	{
+		String topic = "";
+		
+		ArrayList<String> randomTopics = new ArrayList<String>();
+		
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		randomTopics.add("");
+		
+		int randomIndex = (int) (Math.random() * randomTopics.size());
+		
+		topic = randomTopics.get(randomIndex);
+		
+		return topic;
 	}
 	
 }
