@@ -20,7 +20,9 @@ public class Chatbot
 	
 	public String getName()
 	{
-		return this.name;
+		String Name = this.name;
+		
+		return "My name is " + Name;
 	}
 	
 	public void setName(String name)
@@ -94,15 +96,17 @@ public class Chatbot
 		farewells.add("See ya!");
 		farewells.add("Au Revoir!");
 		farewells.add("Good Bye!");
-		farewells.add("Have a nice day!");
+		farewells.add("Don't have a good day. Have a great day!");
 		
 		farewell = farewells.get(farewellCount);
-		farewellCount--;
+		
 		
 		if (farewellCount == 0)
 		{
 			farewellCount = 4;
 		}
+		
+		farewellCount--;
 		
 		return farewell;
 	}
@@ -202,17 +206,17 @@ public class Chatbot
 		
 		ArrayList<String> randomTopics = new ArrayList<String>();
 		
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
-		randomTopics.add("");
+		randomTopics.add("Favorite Animal?");
+		randomTopics.add("What's your favorite sport/team?");
+		randomTopics.add("Do you go to school?");
+		randomTopics.add("Can an elephant jump sideways?");
+		randomTopics.add("Can anything jump sideways?");
+		randomTopics.add("What animals can jump sideways?");
+		randomTopics.add("Can you jump sideways?");
+		randomTopics.add("What's your name?");
+		randomTopics.add("I want to talk about cheese.");
+		randomTopics.add("What's the capital of Uruguay?");
+		randomTopics.add("Can I go to the bathroom please?");
 		
 		int randomIndex = (int) (Math.random() * randomTopics.size());
 		

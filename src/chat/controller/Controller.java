@@ -6,8 +6,7 @@ import chat.view.Popup;
 
 
 public class Controller
-{
-	private Scanner input;
+{	private Scanner input;
 	private Chatbot myChatbot;
 	private Popup view;
 	
@@ -40,7 +39,7 @@ public class Controller
 			
 			userText = view.askQuestion("Keep talking?");
 		}
-		System.out.println("Good bye!");
+		
 	}
 	
 	
