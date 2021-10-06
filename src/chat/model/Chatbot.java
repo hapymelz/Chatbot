@@ -224,6 +224,40 @@ public class Chatbot
 		
 		return topic;
 	}
+
+	public Boolean containsQuestion(String question)
+	{
+		boolean isQuestion = false;
 	
+		
+		ArrayList<String> keywords = new ArrayList<String>();
+		
+		keywords.add("can you");
+		keywords.add("will you");
+		keywords.add("?");
+		
+		for (int index = 0; index < keywords.size(); index ++)
+		{
+			if (question.toLowerCase().contains(keywords.get(index)))
+			{
+				isQuestion = true;
+			}
+			
+		}
+				
+
+		
+		return isQuestion;
+	}
+	
+	public String answerQuestion(String question)
+	{
+		String response = "";
+		
+		
+		
+		
+		return response;
+	}
 }
 	

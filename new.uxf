@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>40</y>
+      <x>10</x>
+      <y>70</y>
       <w>220</w>
       <h>130</h>
     </coordinates>
@@ -13,6 +13,7 @@
 --
 - input : Scanner
 - myChatbot : Chatbot
+- view : Popup
 --
 +Controller() : constructor
 + start() : void</panel_attributes>
@@ -21,8 +22,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>10</y>
+      <x>280</x>
+      <y>0</y>
       <w>240</w>
       <h>340</h>
     </coordinates>
@@ -44,14 +45,15 @@
 + sayFarewell() : String
 + randomTopic() : String
 + isPolite() : boolean
-+ isPolitical : boolean</panel_attributes>
++ isPolitical : boolean
++ answerQuestion() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>190</y>
+      <x>10</x>
+      <y>220</y>
       <w>220</w>
       <h>110</h>
     </coordinates>
@@ -63,14 +65,51 @@ psvm</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>40</y>
       <w>250</w>
-      <h>310</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>chat.controller
 --
 bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>360</y>
+      <w>330</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>answerQuestion(String question)
+--
+response : String
+
+return response</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>340</y>
+      <w>320</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>containsQuestion(String Question)
+--
+isQuestion : boolean = false
+
+ArrayList keywords
+keywords.add(Can, will, ?)
+
+for index = 0; index &lt; keywords.length(), index ++
+	if question.toLowerCase().contains(keywords.get(index))
+		isQuestion = true
+
+return isQuestion</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
