@@ -23,7 +23,7 @@ public class Controller
 //		System.out.println(myChatbot);
 //		System.out.println("What do you want to talk about?");
 		
-		view.displayMessage("lol hi");
+		view.displayMessage("Hi I am Chatbot. ");
 		
 		String userText = view.askQuestion("What do you want to talk about?");
 		

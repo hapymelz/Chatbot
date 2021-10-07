@@ -58,7 +58,14 @@ public class Chatbot
 			response += "Oh, you are SO polite!";
 		}
 		
-		response += getRandomTopic();
+		
+		if (containsQuestion(text))
+		{
+			response += answerQuestion(text);
+		}
+		
+		//response += " " + getRandomTopic();
+		
 		
 		return response;
 	}
@@ -235,6 +242,9 @@ public class Chatbot
 		keywords.add("can you");
 		keywords.add("will you");
 		keywords.add("?");
+		keywords.add("can i");
+		keywords.add("will i");
+		
 		
 		for (int index = 0; index < keywords.size(); index ++)
 		{
@@ -252,12 +262,42 @@ public class Chatbot
 	
 	public String answerQuestion(String question)
 	{
-		String response = "";
+		String answer = question;
+		
+		ArrayList<String> keywords = new ArrayList<String>();
+		ArrayList<String> identifiers = new ArrayList<String>();
+		
+		keywords.add("can you");
+		keywords.add("will you");
+		
+		identifiers.add(" me");
+		identifiers.add(" i ");
+		//identifiers.add("you");
 		
 		
+		for (int index = 0; index < identifiers.size(); index ++)
+		{
+			answer = answer.replace(identifiers.get(index), " you ");
+		}
+
 		
+		for (int index = 0; index < keywords.size(); index ++)
+		{
+			if (answer.toLowerCase().contains(keywords.get(index)))
+			{
+				answer = answer.replace(keywords.get(index), "You asked me to");
+			}
+		}
 		
-		return response;
+		if (answer.contains("?"))
+		{
+			answer = answer.replace("?", "");
+		}
+					
+		
+		answer += ". I'm wondering " + getRandomTopic();
+		
+		return answer;
 	}
 }
 	
