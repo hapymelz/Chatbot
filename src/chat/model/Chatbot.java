@@ -4,6 +4,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 
+/**
+ * The model for our Chatbot project. Used to explore String methods and Text processing
+ * Not very smart, but thats ok!
+ * @author knum5420
+ *
+ */
+
+
+
 public class Chatbot
 {
 	private String name;
@@ -30,12 +39,22 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	/**
+	 * Processes the supplied text and provides a response for external method called
+	 * @param text The text sent from the user via the Controller
+	 * @return The Chatbot's answer to continue the discussion.
+	 */
 	
 	public String processText(String text)
 	{
 		String response = sayGreeting() + "\nYou said: ";
 		
 		response += text + "\n";
+		
+		if (containsQuestion(text))
+		{
+			response += answerQuestion(text);
+		}
 		
 		if (text.toLowerCase().indexOf("date") >= 0)
 		{
@@ -59,10 +78,7 @@ public class Chatbot
 		}
 		
 		
-		if (containsQuestion(text))
-		{
-			response += answerQuestion(text);
-		}
+		
 		
 		//response += " " + getRandomTopic();
 		
@@ -213,17 +229,17 @@ public class Chatbot
 		
 		ArrayList<String> randomTopics = new ArrayList<String>();
 		
-		randomTopics.add("Favorite Animal?");
-		randomTopics.add("What's your favorite sport/team?");
-		randomTopics.add("Do you go to school?");
-		randomTopics.add("Can an elephant jump sideways?");
-		randomTopics.add("Can anything jump sideways?");
-		randomTopics.add("What animals can jump sideways?");
-		randomTopics.add("Can you jump sideways?");
-		randomTopics.add("What's your name?");
-		randomTopics.add("I want to talk about cheese.");
-		randomTopics.add("What's the capital of Uruguay?");
-		randomTopics.add("Can I go to the bathroom please?");
+		randomTopics.add("Favorite Animal? ");
+		randomTopics.add("What's your favorite sport/team? ");
+		randomTopics.add("Do you go to school? ");
+		randomTopics.add("Can an elephant jump sideways? ");
+		randomTopics.add("Can anything jump sideways? ");
+		randomTopics.add("What animals can jump sideways? ");
+		randomTopics.add("Can you jump sideways? ");
+		randomTopics.add("What's your name? ");
+		randomTopics.add("I want to talk about cheese. ");
+		randomTopics.add("What's the capital of Uruguay? ");
+		randomTopics.add("Can I go to the bathroom please? ");
 		
 		int randomIndex = (int) (Math.random() * randomTopics.size());
 		
@@ -263,9 +279,11 @@ public class Chatbot
 	public String answerQuestion(String question)
 	{
 		String answer = question;
+		String topic = "";
 		
 		ArrayList<String> keywords = new ArrayList<String>();
 		ArrayList<String> identifiers = new ArrayList<String>();
+		ArrayList<String> wonderings = new ArrayList<String>();
 		
 		keywords.add("can you");
 		keywords.add("will you");
@@ -273,6 +291,19 @@ public class Chatbot
 		identifiers.add(" me");
 		identifiers.add(" i ");
 		//identifiers.add("you");
+		
+		wonderings.add("you are pretty smart. ");
+		wonderings.add("I should not do that ");
+		wonderings.add("you can eat a banana. ");
+		wonderings.add("is very interesting. ");
+		wonderings.add("shrimp is tasty ");
+		wonderings.add("Ryan Reynolds is hilarious. ");
+		wonderings.add("you are kinda dumb. ");
+		wonderings.add("the Utes are a pretty good football team. ");
+		wonderings.add("I should instead eat ice cream. ");
+		wonderings.add("we should go together. ");
+		wonderings.add("I have an appointment today. ");
+		wonderings.add("we should break up. ");
 		
 		
 		for (int index = 0; index < identifiers.size(); index ++)
@@ -287,15 +318,20 @@ public class Chatbot
 			{
 				answer = answer.replace(keywords.get(index), "You asked me to");
 			}
+			
 		}
 		
 		if (answer.contains("?"))
 		{
-			answer = answer.replace("?", "");
+			answer = answer.replace("?", ". ");
 		}
 					
+		int randomIndex = (int) (Math.random() * wonderings.size());
+		topic = wonderings.get(randomIndex);
 		
-		answer += ". I'm wondering " + getRandomTopic();
+		answer += "I think that " + topic;
+		
+		//answer += ". I'm wondering " + getRandomTopic();
 		
 		return answer;
 	}

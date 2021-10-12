@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>60</y>
+      <w>240</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Player 1
+
+Computer 1
+
+Computer 2
+
+Computer 3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>250</y>
+      <w>240</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>PLayer 1
+--
+leftHand : int
+rightHand : int
+
+get/set 
+
+Attack</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>250</y>
+      <w>270</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Computer 1
+-
+leftHand : int
+rightHand : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>470</y>
+      <w>330</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Attack(hand)
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
