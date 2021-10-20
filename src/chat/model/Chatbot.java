@@ -86,7 +86,7 @@ public class Chatbot
 		return response;
 	}
 	
-	public String sayGreeting()
+	private String sayGreeting()
 	{
 		String greeting = " ";
 		
@@ -109,7 +109,7 @@ public class Chatbot
 		return greeting;
 	}
 	
-	public String sayFarewell()
+	private String sayFarewell()
 	{
 		String farewell = " ";
 		
@@ -145,7 +145,7 @@ public class Chatbot
 		return description;
 	}
 	
-	public String getDate()
+	private String getDate()
 	{
 		String date = "The date is ";
 		
@@ -166,7 +166,7 @@ public class Chatbot
 		return date;
 	}
 	
-	public String getTime()
+	private String getTime()
 	{
 		String time = "The time is ";
 		
@@ -180,7 +180,7 @@ public class Chatbot
 		return time;
 	}
 	
-	public Boolean isPolitical(String parameter)
+	private Boolean isPolitical(String parameter)
 	{
 		boolean political = false;
 		
@@ -203,7 +203,7 @@ public class Chatbot
 		return political;
 	}
 	
-	public Boolean isPolite(String parameter)
+	private Boolean isPolite(String parameter)
 	{
 		boolean polite = false;
 		
@@ -223,7 +223,7 @@ public class Chatbot
 		return polite;
 	}
 	
-	public String getRandomTopic()
+	private String getRandomTopic()
 	{
 		String topic = "";
 		
@@ -248,7 +248,7 @@ public class Chatbot
 		return topic;
 	}
 
-	public Boolean containsQuestion(String question)
+	private Boolean containsQuestion(String question)
 	{
 		boolean isQuestion = false;
 	
@@ -276,7 +276,7 @@ public class Chatbot
 		return isQuestion;
 	}
 	
-	public String answerQuestion(String question)
+	private String answerQuestion(String question)
 	{
 		String answer = question;
 		String topic = "";
