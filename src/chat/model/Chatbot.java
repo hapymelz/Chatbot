@@ -47,7 +47,7 @@ public class Chatbot
 	
 	public String processText(String text)
 	{
-		String response = sayGreeting() + "\nYou said: ";
+		String response =  "\nYou said: ";
 		
 		response += text + "\n";
 		
@@ -69,7 +69,6 @@ public class Chatbot
 		if (isPolitical(text))
 		{
 			response += "I'm not about politics.\n";
-			response += sayFarewell() + "\n";
 		}
 		
 		if (isPolite(text))
@@ -80,56 +79,48 @@ public class Chatbot
 		
 		
 		
-		//response += " " + getRandomTopic();
+		response += " " + getRandomTopic();
 		
 		
 		return response;
 	}
 	
-	private String sayGreeting()
+	public String sayGreeting()
 	{
 		String greeting = " ";
 		
-		ArrayList<String> greetings = new ArrayList<String>();
 		
-		greetings.add("Hallo!");
-		greetings.add("Howdy!");
-		greetings.add("Good day to you, sir.");
-		greetings.add("Hi friend!");
-		greetings.add("Hey, you!");
+		String [] greetings = new String [5];
 		
-		greeting = greetings.get(greetingCount);
-		greetingCount++;
 		
-		if (greetingCount == greetings.size())
-		{
-			greetingCount = 0;
-		}
+		greetings[0] = ("Hallo!");
+		greetings[1] = ("Howdy!");
+		greetings[2] = ("Good day to you, sir.");
+		greetings[3] = ("Hi friend!");
+		greetings[4] = ("Hey, you!");
+		
+		int random = (int) Math.random() * greetings.length;
+		
+		greeting = greetings[random];
 		
 		return greeting;
 	}
 	
-	private String sayFarewell()
+	public String sayFarewell()
 	{
 		String farewell = " ";
 		
-		ArrayList<String> farewells = new ArrayList<String>();
+		String [] farewells = new String [5];
 		
-		farewells.add("Bye Bye!");
-		farewells.add("See ya!");
-		farewells.add("Au Revoir!");
-		farewells.add("Good Bye!");
-		farewells.add("Don't have a good day. Have a great day!");
+		farewells[0] = ("Bye Bye!");
+		farewells[1] = ("See ya!");
+		farewells[2] = ("Au Revoir!");
+		farewells[3] = ("Good Bye!");
+		farewells[4] = ("Don't have a good day. Have a great day!");
 		
-		farewell = farewells.get(farewellCount);
+		int random = (int) Math.random() * farewells.length;
 		
-		
-		if (farewellCount == 0)
-		{
-			farewellCount = 4;
-		}
-		
-		farewellCount--;
+		farewell = farewells[random];
 		
 		return farewell;
 	}
