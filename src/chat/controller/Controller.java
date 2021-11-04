@@ -15,7 +15,7 @@ public class Controller
 	{
 		//this.input = new Scanner(System.in);
 		this.myChatbot = new Chatbot("Chatbot");
-		this.view = new Popup();
+		this.view = new Popup(); 
 		
 	}
 	public void start()
