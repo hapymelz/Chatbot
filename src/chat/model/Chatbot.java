@@ -242,45 +242,7 @@ public class Chatbot
 		return topic;
 	}
 	
-	public String getMostCommonWord(ArrayList<String> source)
-	{
-		String common = "";
-		
-		ArrayList<String> actualWords = new ArrayList<String>();
-		
-		for (String sentence : source)
-		{
-			String [] words = sentence.split(" ");
-			for(String word : words)
-			{
-				actualWords.add(word);
-			}
-		}
-		
-		int most = 0;
-		
-		for (int index = 0; index < actualWords.size(); index++)
-		{
-			String current = actualWords.get(index);
-			int count = 1;
-			for (int inner = index + 1; inner < actualWords.size(); inner++)
-			{
-				if (actualWords.get(inner).equalsIgnoreCase(current))
-				{
-					count++;
-				}
-				
-			}
-			if (count > most)
-			{
-				most = count;
-				common = current;
-			}
-		}
-		common = "The most common word was: "+ common + " and it occurs " + most + " times.";
-		
-		return common;
-	}
+
 
 	private Boolean containsQuestion(String question)
 	{
@@ -363,13 +325,54 @@ public class Chatbot
 		int randomIndex = (int) (Math.random() * wonderings.size());
 		topic = wonderings.get(randomIndex);
 		
-		answer += "I think that " + topic;
+		answer += ". I think that " + topic;
 		
 		//answer += ". I'm wondering " + getRandomTopic();
 		
 		return answer;
 	}
 
+	
+	public String getMostCommonWord(ArrayList<String> source)
+	{
+		String common = "";
+		
+		ArrayList<String> actualWords = new ArrayList<String>();
+		
+		for (String sentence : source)
+		{
+			String [] words = sentence.split(" ");
+			for(String word : words)
+			{
+				actualWords.add(word);
+			}
+		}
+		
+		int most = 0;
+		
+		for (int index = 0; index < actualWords.size(); index++)
+		{
+			String current = actualWords.get(index);
+			int count = 1;
+			for (int inner = index + 1; inner < actualWords.size(); inner++)
+			{
+				if (actualWords.get(inner).equalsIgnoreCase(current))
+				{
+					count++;
+				}
+				
+			}
+			if (count > most)
+			{
+				most = count;
+				common = current;
+			}
+		}
+		common = "The most common word was: "+ common + " and it occurs " + most + " times.";
+		
+		return common;
+	}
+	
 	public ArrayList<String> getUserInputs()
 	{
 		return this.userInputs;
@@ -380,14 +383,14 @@ public class Chatbot
 		return this.chatbotResponses;
 	}
 
-	public ArrayList<String> setUserInput(ArrayList<String> userInput)
+	public void setUserInput(ArrayList<String> input)
 	{
-		this.userInputs = userInput;
+		this.userInputs = input;
 	}
 	
-	public ArrayList<String> setChatbotResponses(ArrayList<String> chatbotResponse)
+	public void setChatbotResponses(ArrayList<String> responses)
 	{
-		this.chatbotResponses = chatbotResponse;
+		this.chatbotResponses = responses;
 	}
 
 

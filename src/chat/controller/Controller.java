@@ -29,7 +29,7 @@ public class Controller
 	{
 		ArrayList<String> input = loadTextToList("user input.txt");
 		myChatbot.setUserInput(input);
-		input = loadTextToList("chat.txt");
+		input = loadTextToList("chat output.txt");
 		myChatbot.setChatbotResponses(input);
 		
 		
@@ -47,8 +47,8 @@ public class Controller
 		}
 		view.displayMessage(myChatbot.sayFarewell());
 		
-		view.displayMessage("Lets save some text!");
-		saveListAsText(myChatbot.getUserInputs(), "user inut.txt");
+		view.displayMessage("Conversation saved");
+		saveListAsText(myChatbot.getUserInputs(), "user input.txt");
 		saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
 	}
 		
