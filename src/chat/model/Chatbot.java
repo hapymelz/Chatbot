@@ -16,15 +16,18 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private String name;
-	private int greetingCount;
-	private int farewellCount; 
-	
+	//private int greetingCount;
+	//private int farewellCount; 
+	public ArrayList<String> userInputs;
+	public ArrayList<String> chatbotResponses;
 	
 	public Chatbot(String name)
 	{
 		this.name = name;
-		this.greetingCount = 0;
-		this.farewellCount = 4;
+		//this.greetingCount = 0;
+		//this.farewellCount = 4;
+		this.userInputs = new ArrayList<String>();
+		this.chatbotResponses = new ArrayList<String>();
 	}
 	
 	public String getName()
@@ -238,6 +241,46 @@ public class Chatbot
 		
 		return topic;
 	}
+	
+	public String getMostCommonWord(ArrayList<String> source)
+	{
+		String common = "";
+		
+		ArrayList<String> actualWords = new ArrayList<String>();
+		
+		for (String sentence : source)
+		{
+			String [] words = sentence.split(" ");
+			for(String word : words)
+			{
+				actualWords.add(word);
+			}
+		}
+		
+		int most = 0;
+		
+		for (int index = 0; index < actualWords.size(); index++)
+		{
+			String current = actualWords.get(index);
+			int count = 1;
+			for (int inner = index + 1; inner < actualWords.size(); inner++)
+			{
+				if (actualWords.get(inner).equalsIgnoreCase(current))
+				{
+					count++;
+				}
+				
+			}
+			if (count > most)
+			{
+				most = count;
+				common = current;
+			}
+		}
+		common = "The most common word was: "+ common + " and it occurs " + most + " times.";
+		
+		return common;
+	}
 
 	private Boolean containsQuestion(String question)
 	{
@@ -326,5 +369,27 @@ public class Chatbot
 		
 		return answer;
 	}
+
+	public ArrayList<String> getUserInputs()
+	{
+		return this.userInputs;
+	}
+	
+	public ArrayList<String> getChatbotResponses()
+	{
+		return this.chatbotResponses;
+	}
+
+	public ArrayList<String> setUserInput(ArrayList<String> userInput)
+	{
+		this.userInputs = userInput;
+	}
+	
+	public ArrayList<String> setChatbotResponses(ArrayList<String> chatbotResponse)
+	{
+		this.chatbotResponses = chatbotResponse;
+	}
+
+
 }
 	
