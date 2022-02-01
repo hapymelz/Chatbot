@@ -42,6 +42,16 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	public String processText(String text, int choice)
+	{
+		String response = "";
+		
+		
+		return response;
+	}
+	
+	
+	
 	/**
 	 * Processes the supplied text and provides a response for external method called
 	 * @param text The text sent from the user via the Controller
