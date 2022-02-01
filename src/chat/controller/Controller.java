@@ -51,12 +51,23 @@ public class Controller
 		saveListAsText(myChatbot.getUserInputs(), "user input.txt");
 		saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
 	}
+	
+	public String interactWithChatbot(String text, int buttonNumber)
+	{
+		String response = "";
 		
+		response += myChatbot.processText(text, buttonNumber);
+		
+		
+		return response;
+	}
+	
+	
 	public String interactWithChatbot(String text)
 	{
 		String response = "";
 		
-		response += myChatbot.processText(text);
+		response += myChatbot.processText(text,1);
 		
 		return response;
 	}

@@ -46,17 +46,24 @@ public class Chatbot
 	{
 		String response = "";
 		
-		if (choice == 0 && containsQuestion(text))
+		if (choice == 0)
 		{
-			response += answerQuestion(text);
+			if (containsQuestion(text))
+			{
+				response += answerQuestion(text);
+			}
+			else
+			{
+				response += "not a question, silly mammal";
+			}
 		}
-		else if (choice == 1 && text.toLowerCase().indexOf("date") >= 0)
+		else if (choice == 1)
 		{
-			
+			response += getDate();
 		}
-		else if (choice == 2 && text.toLowerCase().indexOf("date") >= 0)
+		else if (choice == 2)
 		{
-			
+			response += getTime();
 		}
 		
 		return response;
