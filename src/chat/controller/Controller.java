@@ -10,11 +10,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import chat.view.ChatFrame;
+
 
 public class Controller
 {	//private Scanner input;
 	private Chatbot myChatbot;
 	private Popup view;
+	private ChatFrame frame;
 	
 	
 	public Controller()
@@ -22,34 +25,36 @@ public class Controller
 		//this.input = new Scanner(System.in);
 		this.myChatbot = new Chatbot("Chatbot");
 		this.view = new Popup(); 
-		
+		this.frame = new ChatFrame(this);
 	}
 	
 	public void start()
 	{
-		ArrayList<String> input = loadTextToList("user input.txt");
-		myChatbot.setUserInput(input);
-		input = loadTextToList("chat output.txt");
-		myChatbot.setChatbotResponses(input);
 		
 		
-		view.displayMessage(myChatbot.sayGreeting());
-		
-		String userText = view.askQuestion("What do you want to talk about?");
-		
-		while (!userText.equals("quit"))
-		{
-			String response = interactWithChatbot(userText);
-			view.displayMessage(response);
-			
-			
-			userText = view.askQuestion("Keep talking?");
-		}
-		view.displayMessage(myChatbot.sayFarewell());
-		
-		view.displayMessage("Conversation saved");
-		saveListAsText(myChatbot.getUserInputs(), "user input.txt");
-		saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
+//		ArrayList<String> input = loadTextToList("user input.txt");
+//		myChatbot.setUserInput(input);
+//		input = loadTextToList("chat output.txt");
+//		myChatbot.setChatbotResponses(input);
+//		
+//		
+//		view.displayMessage(myChatbot.sayGreeting());
+//		
+//		String userText = view.askQuestion("What do you want to talk about?");
+//		
+//		while (!userText.equals("quit"))
+//		{
+//			String response = interactWithChatbot(userText);
+//			view.displayMessage(response);
+//			
+//			
+//			userText = view.askQuestion("Keep talking?");
+//		}
+//		view.displayMessage(myChatbot.sayFarewell());
+//		
+//		view.displayMessage("Conversation saved");
+//		saveListAsText(myChatbot.getUserInputs(), "user input.txt");
+//		saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
 	}
 	
 	public String interactWithChatbot(String text, int buttonNumber)
@@ -67,7 +72,7 @@ public class Controller
 	{
 		String response = "";
 		
-		response += myChatbot.processText(text,1);
+		response += myChatbot.processText(text);
 		
 		return response;
 	}

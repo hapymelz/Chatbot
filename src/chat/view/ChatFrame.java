@@ -4,24 +4,24 @@ import javax.swing.JFrame;
 import chat.controller.Controller;
 
 
-public class Frame extends JFrame
+public class ChatFrame extends JFrame
 {
-	private Panel panel;
+	private ChatPanel chatPanel;
 	private Controller app;
 	
-	public Frame(Controller app)
+	public ChatFrame(Controller app)
 	{
 		super();
 		
 		this.app = app;
-		this.panel = new Panel(this.app);
+		this.chatPanel = new ChatPanel(this.app);
 		
 		setupFrame();
 	}
 	
 	private void setupFrame()
 	{
-		this.setContentPane(panel);
+		this.setContentPane(chatPanel);
 		this.setSize(800,600);
 		this.setTitle("GUI Demo");
 		this.setResizable(false);

@@ -66,7 +66,7 @@ public class Chatbot
 			response += getTime();
 		}
 		
-		return response;
+		return response + "\n";
 	}
 	
 	
