@@ -65,6 +65,19 @@ public class Chatbot
 		{
 			response += getTime();
 		}
+		else if (choice == 3) 
+		{
+			response += "Whatever you say about politics, you're wrong. \n";
+		}
+		else if (choice == 4)
+		{
+			response += "Oh, you are SO polite!";
+		}
+		else if (choice == 5)
+		{
+			response += " " + getRandomTopic();
+		}
+		
 		
 		return response + "\n";
 	}
@@ -100,7 +113,7 @@ public class Chatbot
 		
 		if (isPolitical(text))
 		{
-			response += "I'm not about politics.\n";
+			response += "Whatever you say about politics, you're wrong. \n";
 		}
 		
 		if (isPolite(text))
@@ -111,7 +124,7 @@ public class Chatbot
 		
 		
 		
-		response += " " + getRandomTopic();
+		//response += " " + getRandomTopic();
 		
 		
 		return response;
