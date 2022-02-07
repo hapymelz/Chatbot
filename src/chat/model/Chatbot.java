@@ -227,6 +227,7 @@ public class Chatbot
 		politicList.add("democrat");
 		politicList.add("election");
 		politicList.add("biden");
+		politicList.add("trump");
 		
 		for (int index = 0; index < 5; index++)
 		{

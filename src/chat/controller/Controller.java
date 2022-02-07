@@ -61,8 +61,30 @@ public class Controller
 	{
 		String response = "";
 		
+		if (buttonNumber == 6)
+		{
+			saveListAsText(myChatbot.getUserInputs(),"user input.txt");
+			saveListAsText(myChatbot.getChatbotResponses(), "chat output.txt");
+			response += "\nSaved the texts\n";
+		}
+		else if (buttonNumber == 7)
+		{
+			ArrayList<String> userInput = loadTextToList("user input.txt");
+			ArrayList<String> chatResponses = loadTextToList("chat input.txt");
+			myChatbot.setUserInput(userInput);
+			myChatbot.setChatbotResponses(chatResponses);
+			
+			for (int index = 0; index < userInput.size(); index++)
+			{
+				response += "User: " + userInput.get(index) + "\n";
+				response += "Chatbot: " + chatResponses.get(index) + "\n";
+			}
+;
+		}
+		else
+		{
 		response += myChatbot.processText(text, buttonNumber);
-		
+		}
 		
 		return response;
 	}
