@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>42</y>
+      <w>144</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>/Pokemon/
+--
+- pokedexNumber : int
+- health : int
+- canEvolve : Boolean
+- name : String
+--
++ get()/set()
++ Pokemon() : constructor
+- setup() : void 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>156</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Luxio/
+--
+/ /no data members currently/
+--
++ Luxio() : constructor
++ Luxio(name : String) : constructor
++ Luxio(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>156</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Infernape/
+--
+/ /no data members currently/
+--
++ Infernape() : constructor
++ Infernape(name : String) : constructor
++ Infernape(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>264</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Umbreon/
+--
+/ /no data members currently/
+--
++ Umbreon() : constructor
++ Umbreon(name : String) : constructor
++ Umbreon(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>156</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Palkia/
+--
+/ /no data members currently/
+--
++ Palkia() : constructor
++ Palkia(name : String) : constructor
++ Palkia(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>264</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Shinx/
+--
+/ /no data members currently/
+--
++ Shinx() : constructor
++ Shinx(name : String) : constructor
++ Shinx(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>264</y>
+      <w>186</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>/Snervine/
+--
+/ /no data members currently/
+--
++ Snervine() : constructor
++ Snervine(name : String) : constructor
++ Snervine(number : int, name : String) : constructor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>384</y>
+      <w>102</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Electric/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>456</y>
+      <w>102</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Dark/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>384</y>
+      <w>102</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Fighting/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>384</y>
+      <w>108</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Fire/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>528</y>
+      <w>108</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Water/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>528</y>
+      <w>102</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Dragon/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>456</y>
+      <w>108</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>/Grass/
+--
++ statusEffect() : void
++ otherMethod : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
